@@ -38,7 +38,102 @@ const clearButton = document.querySelector('#clear');
 
 const displayArea = document.querySelector('#display');
 
-oneButton.addEventListener('click', () => {
+const displayText = document.querySelector('#input-line');
 
+oneButton.addEventListener('click', () => {
+  if(displayText.textContent === '0') {
+    displayText.textContent = '';
+  }
+  displayText.textContent += '1';
 });
 
+twoButton.addEventListener('click', () => {
+  if(displayText.textContent === '0') {
+    displayText.textContent = '';
+  }
+  displayText.textContent += '2';
+});
+
+threeButton.addEventListener('click', () => {
+  if(displayText.textContent === '0') {
+    displayText.textContent = '';
+  }
+  displayText.textContent += '3';
+});
+
+fourButton.addEventListener('click', () => {
+  if(displayText.textContent === '0') {
+    displayText.textContent = '';
+  }
+  displayText.textContent += '4';
+});
+
+fiveButton.addEventListener('click', () => {
+  if(displayText.textContent === '0') {
+    displayText.textContent = '';
+  }
+  displayText.textContent += '5';
+});
+
+sixButton.addEventListener('click', () => {
+  if(displayText.textContent === '0') {
+    displayText.textContent = '';
+  }
+  displayText.textContent += '6';
+});
+
+sevenButton.addEventListener('click', () => {
+  if(displayText.textContent === '0') {
+    displayText.textContent = '';
+  }
+  displayText.textContent += '7';
+});
+
+eightButton.addEventListener('click', () => {
+  if(displayText.textContent === '0') {
+    displayText.textContent = '';
+  }
+  displayText.textContent += '8';
+});
+
+nineButton.addEventListener('click', () => {
+  if(displayText.textContent === '0') {
+    displayText.textContent = '';
+  }
+  displayText.textContent += '9';
+});
+
+zeroButton.addEventListener('click', () => {
+  if(displayText.textContent === '0') {
+    displayText.textContent = '';
+  }
+  displayText.textContent += '0';
+});
+
+decimalButton.addEventListener('click', () => {
+  if(displayText.textContent.includes('.')) {
+    return;
+  } else {
+    displayText.textContent += '.';
+  }
+});
+
+addButton.addEventListener('click', () => {
+  
+});
+
+subtractButton.addEventListener('click', () => {
+  
+});
+
+multiplyButton.addEventListener('click', () => {
+  
+});
+
+divideButton.addEventListener('click', () => {
+  
+});
+
+equalsButton.addEventListener('click', () => {
+  
+});
