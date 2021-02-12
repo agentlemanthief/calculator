@@ -35,10 +35,12 @@ const multiplyButton = document.querySelector('#multiply');
 const divideButton = document.querySelector('#divide');
 const equalsButton = document.querySelector('#equals');
 const clearButton = document.querySelector('#clear');
-
-const displayArea = document.querySelector('#display');
-
 const displayText = document.querySelector('#input-line');
+
+let firstNumber = 0;
+let secondNumber = 0;
+let operator = '';
+let answer = 0;
 
 oneButton.addEventListener('click', () => {
   if(displayText.textContent === '0') {
@@ -119,7 +121,9 @@ decimalButton.addEventListener('click', () => {
 });
 
 addButton.addEventListener('click', () => {
-  
+  firstNumber = parseFloat(displayText.textContent);
+  displayText.textContent = '';
+  operator = add;
 });
 
 subtractButton.addEventListener('click', () => {
@@ -135,5 +139,8 @@ divideButton.addEventListener('click', () => {
 });
 
 equalsButton.addEventListener('click', () => {
-  
+  secondNumber = parseFloat(displayText.textContent);
+  displayText.textContent = '';
+  answer = operate(operator, firstNumber, secondNumber);
+  displayText.textContent = answer;
 });
