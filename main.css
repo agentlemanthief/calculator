@@ -27,7 +27,7 @@ h1 {
   position: absolute;
   bottom: -0.5em;
   right: 0.5em;
-  font: 30px monospace;
+  font: 3em monospace;
 }
 
 #calculator-body {
@@ -52,7 +52,7 @@ h1 {
 
 .buttons {
   border-radius: 0.25em;
-  font: 40px monospace;
+  font: 3em monospace;
   border: none;
 }
 
@@ -72,20 +72,20 @@ h1 {
 
 .operator-buttons {
   border-radius: 0.25em;
-  font: 40px monospace;
+  font: 3em monospace;
   background-color: rgb(240, 162, 60);
   border: none;
 }
 
 #decimal {
   border-radius: 0.25em;
-  font: 40px monospace;
+  font: 3em monospace;
   border: none;
 }
 
 #clear {
   border-radius: 0.25em;
-  font: 40px monospace;
+  font: 3em monospace;
   border: none;
   grid-column: 1 / 4;
   background-color: rgba(234, 105, 94);
