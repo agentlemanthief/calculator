@@ -37,7 +37,7 @@ h1 {
   background-color: rgba(122, 122, 122);
   border-radius: 1em;
   border: black solid 2px;
-  max-width: 400px;
+  width: 400px;
   height: 600px;
   box-shadow: 5px 5px 10px rgba(100, 100, 100, 0.486);
 }
@@ -55,6 +55,7 @@ h1 {
   border-radius: 0.25em;
   font: 3em monospace;
   border: none;
+  background-color: rgb(192, 192, 192);
 }
 
 .buttons:active {
