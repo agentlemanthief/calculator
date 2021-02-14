@@ -18,7 +18,10 @@ function divide(a, b) {
 }
 
 function operate(operator, a, b) {
-  return Math.round((operator(a, b) + Number.EPSILON) * 10000) / 10000;
+  let result = Math.round((operator(a, b) + Number.EPSILON) * 10000) / 10000;
+  if(result.toString().length >= 14) {
+    return result.toExponential(6);
+  } else return result;
 }
 
 const numberButtons = document.querySelectorAll('.buttons');
