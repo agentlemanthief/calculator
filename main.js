@@ -18,16 +18,7 @@ function operate(operator, a, b) {
   return operator(a, b);
 }
 
-const oneButton = document.querySelector('#one');
-const twoButton = document.querySelector('#two');
-const threeButton = document.querySelector('#three');
-const fourButton = document.querySelector('#four');
-const fiveButton = document.querySelector('#five');
-const sixButton = document.querySelector('#six');
-const sevenButton = document.querySelector('#seven');
-const eightButton = document.querySelector('#eight');
-const nineButton = document.querySelector('#nine');
-const zeroButton = document.querySelector('#zero');
+const numberButtons = document.querySelectorAll('.buttons');
 const decimalButton = document.querySelector('#decimal');
 const addButton = document.querySelector('#add');
 const subtractButton = document.querySelector('#subtract');
@@ -42,74 +33,13 @@ let secondNumber;
 let operator = '';
 let answer = 0;
 
-oneButton.addEventListener('click', () => {
-  if(displayText.textContent === '0' || operator) {
-    displayText.textContent = '';
-  }
-  displayText.textContent += '1';
-});
-
-twoButton.addEventListener('click', () => {
-  if(displayText.textContent === '0' || operator) {
-    displayText.textContent = '';
-  }
-  displayText.textContent += '2';
-});
-
-threeButton.addEventListener('click', () => {
-  if(displayText.textContent === '0' || operator) {
-    displayText.textContent = '';
-  }
-  displayText.textContent += '3';
-});
-
-fourButton.addEventListener('click', () => {
-  if(displayText.textContent === '0' || operator) {
-    displayText.textContent = '';
-  }
-  displayText.textContent += '4';
-});
-
-fiveButton.addEventListener('click', () => {
-  if(displayText.textContent === '0' || operator) {
-    displayText.textContent = '';
-  }
-  displayText.textContent += '5';
-});
-
-sixButton.addEventListener('click', () => {
-  if(displayText.textContent === '0' || operator) {
-    displayText.textContent = '';
-  }
-  displayText.textContent += '6';
-});
-
-sevenButton.addEventListener('click', () => {
-  if(displayText.textContent === '0' || operator) {
-    displayText.textContent = '';
-  }
-  displayText.textContent += '7';
-});
-
-eightButton.addEventListener('click', () => {
-  if(displayText.textContent === '0' || operator) {
-    displayText.textContent = '';
-  }
-  displayText.textContent += '8';
-});
-
-nineButton.addEventListener('click', () => {
-  if(displayText.textContent === '0' || operator) {
-    displayText.textContent = '';
-  }
-  displayText.textContent += '9';
-});
-
-zeroButton.addEventListener('click', () => {
-  if(displayText.textContent === '0' || operator) {
-    displayText.textContent = '';
-  }
-  displayText.textContent += '0';
+numberButtons.forEach((number) => {
+  number.addEventListener('click', () => {
+    if(displayText.textContent === '0') {
+      displayText.textContent = '';
+    }
+    displayText.textContent += number.textContent;
+  });
 });
 
 decimalButton.addEventListener('click', () => {
@@ -121,66 +51,42 @@ decimalButton.addEventListener('click', () => {
 });
 
 addButton.addEventListener('click', () => {
-  if(firstNumber === undefined) {
+  if(operator) {
+    firstNumber = operate(operator, firstNumber, parseFloat(displayText.textContent));
+  } else {
     firstNumber = parseFloat(displayText.textContent);
-  } else if(operator === add) {
-    firstNumber += parseFloat(displayText.textContent);
-  } else if(operator === subtract) {
-    firstNumber -= parseFloat(displayText.textContent);
-  } else if(operator === divide) {
-    firstNumber /= parseFloat(displayText.textContent);
-  } else if(operator === multiply) {
-    firstNumber *= parseFloat(displayText.textContent);
-  } 
-  displayText.textContent = firstNumber;
+  }
+  displayText.textContent = '';
   operator = add;
 });
 
 subtractButton.addEventListener('click', () => {
-  if(firstNumber === undefined) {
+  if(operator) {
+    firstNumber = operate(operator, firstNumber, parseFloat(displayText.textContent));
+  } else {
     firstNumber = parseFloat(displayText.textContent);
-  } else if(operator === add) {
-    firstNumber += parseFloat(displayText.textContent);
-  } else if(operator === subtract) {
-    firstNumber -= parseFloat(displayText.textContent);
-  } else if(operator === divide) {
-    firstNumber /= parseFloat(displayText.textContent);
-  } else if(operator === multiply) {
-    firstNumber *= parseFloat(displayText.textContent);
-  } 
-  displayText.textContent = firstNumber;
+  }
+  displayText.textContent = '';
   operator = subtract;
 });
 
 multiplyButton.addEventListener('click', () => {
-  if(firstNumber === undefined) {
+  if(operator) {
+    firstNumber = operate(operator, firstNumber, parseFloat(displayText.textContent));
+  } else {
     firstNumber = parseFloat(displayText.textContent);
-  } else if(operator === add) {
-    firstNumber += parseFloat(displayText.textContent);
-  } else if(operator === subtract) {
-    firstNumber -= parseFloat(displayText.textContent);
-  } else if(operator === divide) {
-    firstNumber /= parseFloat(displayText.textContent);
-  } else if(operator === multiply) {
-    firstNumber *= parseFloat(displayText.textContent);
-  } 
-  displayText.textContent = firstNumber;
+  }
+  displayText.textContent = '';
   operator = multiply;
 });
 
 divideButton.addEventListener('click', () => {
-  if(firstNumber === undefined) {
+  if(operator) {
+    firstNumber = operate(operator, firstNumber, parseFloat(displayText.textContent));
+  } else {
     firstNumber = parseFloat(displayText.textContent);
-  } else if(operator === add) {
-    firstNumber += parseFloat(displayText.textContent);
-  } else if(operator === subtract) {
-    firstNumber -= parseFloat(displayText.textContent);
-  } else if(operator === divide) {
-    firstNumber /= parseFloat(displayText.textContent);
-  } else if(operator === multiply) {
-    firstNumber *= parseFloat(displayText.textContent);
-  } 
-  displayText.textContent = firstNumber;
+  }
+  displayText.textContent = '';
   operator = divide;
 });
 

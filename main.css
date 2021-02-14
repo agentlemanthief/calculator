@@ -77,7 +77,16 @@ h1 {
   border: none;
 }
 
+#decimal {
+  border-radius: 0.25em;
+  font: 40px monospace;
+  border: none;
+}
+
 #clear {
+  border-radius: 0.25em;
+  font: 40px monospace;
+  border: none;
   grid-column: 1 / 4;
   background-color: rgba(234, 105, 94);
   border: none;
