@@ -32,6 +32,7 @@ const multiplyButton = document.querySelector('#multiply');
 const divideButton = document.querySelector('#divide');
 const equalsButton = document.querySelector('#equals');
 const clearButton = document.querySelector('#clear');
+const backspaceButton = document.querySelector('#backspace');
 const displayText = document.querySelector('#input-line');
 
 let firstNumber;
@@ -110,3 +111,7 @@ clearButton.addEventListener('click', () => {
   answer = 0;
   operator = undefined;
 });
+
+backspaceButton.addEventListener('click', () => {
+  displayText.textContent = displayText.textContent.toString().slice(0, -1);
+})
