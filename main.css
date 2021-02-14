@@ -44,8 +44,8 @@ h1 {
 
 .all-buttons {
   display: grid;
-  grid-template-rows: repeat(5, 1fr);
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 20%);
+  grid-template-columns: repeat(4, 25%);
   margin: auto;
   height: 70%;
   width: 90%;
