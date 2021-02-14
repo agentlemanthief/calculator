@@ -11,11 +11,14 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-  return a / b;
+  if(a === 0 || b === 0) {
+    alert('You can\'t divide by 0, dumbass!');
+    return 0; 
+  } else return a / b; 
 }
 
 function operate(operator, a, b) {
-  return operator(a, b);
+  return Math.round((operator(a, b) + Number.EPSILON) * 10000) / 10000;
 }
 
 const numberButtons = document.querySelectorAll('.buttons');
