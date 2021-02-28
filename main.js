@@ -24,6 +24,16 @@ function operate(operator, a, b) {
   } else return result;
 }
 
+function operatorButtonFunction(operation) {
+  if(operator) {
+    firstNumber = operate(operator, firstNumber, parseFloat(displayText.textContent));
+  } else {
+    firstNumber = parseFloat(displayText.textContent);
+  }
+  displayText.textContent = '';
+  operator = operation;
+}
+
 const numberButtons = document.querySelectorAll('.buttons');
 const decimalButton = document.querySelector('#decimal');
 const addButton = document.querySelector('#add');
@@ -57,51 +67,20 @@ decimalButton.addEventListener('click', () => {
   }
 });
 
-addButton.addEventListener('click', () => {
-  if(operator) {
-    firstNumber = operate(operator, firstNumber, parseFloat(displayText.textContent));
-  } else {
-    firstNumber = parseFloat(displayText.textContent);
-  }
-  displayText.textContent = '';
-  operator = add;
-});
+addButton.addEventListener('click', () => operatorButtonFunction(add))
 
-subtractButton.addEventListener('click', () => {
-  if(operator) {
-    firstNumber = operate(operator, firstNumber, parseFloat(displayText.textContent));
-  } else {
-    firstNumber = parseFloat(displayText.textContent);
-  }
-  displayText.textContent = '';
-  operator = subtract;
-});
+subtractButton.addEventListener('click', () => operatorButtonFunction(subtract))
 
-multiplyButton.addEventListener('click', () => {
-  if(operator) {
-    firstNumber = operate(operator, firstNumber, parseFloat(displayText.textContent));
-  } else {
-    firstNumber = parseFloat(displayText.textContent);
-  }
-  displayText.textContent = '';
-  operator = multiply;
-});
+multiplyButton.addEventListener('click', () => operatorButtonFunction(multiply))
 
-divideButton.addEventListener('click', () => {
-  if(operator) {
-    firstNumber = operate(operator, firstNumber, parseFloat(displayText.textContent));
-  } else {
-    firstNumber = parseFloat(displayText.textContent);
-  }
-  displayText.textContent = '';
-  operator = divide;
-});
+divideButton.addEventListener('click', () => operatorButtonFunction(divide))
 
 equalsButton.addEventListener('click', () => {
   secondNumber = parseFloat(displayText.textContent);
   displayText.textContent = '';
   answer = operate(operator, firstNumber, secondNumber);
   displayText.textContent = answer;
+  operator = ''
 });
 
 clearButton.addEventListener('click', () => {
